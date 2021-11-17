@@ -2,6 +2,7 @@
 function $(selector) {
   return document.querySelector(selector);
 }
+
 function getUnixTimestamp(date) {
   return new Date(date).getTime();
 }
@@ -36,7 +37,6 @@ function createSpinnerElement(id) {
 let isDeathLoading = false;
 let isRecoveredLoading = false;
 
-// api
 function fetchCovidSummary() {
   const url = 'https://api.covid19api.com/summary';
   return axios.get(url);
@@ -77,12 +77,12 @@ async function handleListClick(event) {
   clearRecoveredList();
   startLoadingAnimation();
   isDeathLoading = true;
-  const { data: deathResponse } = await fetchCountryInfo(selectedId, 'deaths');
-  const { data: recoveredResponse } = await fetchCountryInfo(
+  const {data: deathResponse} = await fetchCountryInfo(selectedId, 'deaths');
+  const {data: recoveredResponse} = await fetchCountryInfo(
     selectedId,
     'recovered',
   );
-  const { data: confirmedResponse } = await fetchCountryInfo(
+  const {data: confirmedResponse} = await fetchCountryInfo(
     selectedId,
     'confirmed',
   );
@@ -158,7 +158,7 @@ function endLoadingAnimation() {
 }
 
 async function setupData() {
-  const { data } = await fetchCovidSummary();
+  const {data} = await fetchCovidSummary();
   setTotalConfirmedNumber(data);
   setTotalDeathsByWorld(data);
   setTotalRecoveredByWorld(data);
