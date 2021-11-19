@@ -1,9 +1,9 @@
 // utils
-function $(selector: any) {
+function $(selector: string) {
     return document.querySelector(selector);
 }
 
-function getUnixTimestamp(date: any) {
+function getUnixTimestamp(date: string | number | Date) : number{
     return new Date(date).getTime();
 }
 
@@ -99,7 +99,7 @@ function setDeathsList(data: any) {
     const sorted = data.sort(
         (a: any, b: any) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date),
     );
-    sorted.forEach((value:any) => {
+    sorted.forEach((value: any) => {
         const li = document.createElement('li');
         li.setAttribute('class', 'list-item-b flex align-center');
         const span = document.createElement('span');
@@ -125,7 +125,7 @@ function setRecoveredList(data: any) {
     const sorted = data.sort(
         (a: any, b: any) => getUnixTimestamp(b.Date) - getUnixTimestamp(a.Date),
     );
-    sorted.forEach((value:any) => {
+    sorted.forEach((value: any) => {
         const li = document.createElement('li');
         li.setAttribute('class', 'list-item-b flex align-center');
         const span = document.createElement('span');
