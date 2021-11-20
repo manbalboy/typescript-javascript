@@ -1,3 +1,5 @@
+import axios from 'axios';
+import * as Chart from 'chart.js';
 // utils
 function $(selector: string) {
   return document.querySelector(selector);
@@ -178,9 +180,15 @@ async function setupData() {
 }
 
 function renderChart(data: any, labels: any) {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const ctx = $('#lineChart').getContext('2d');
   Chart.defaults.color = '#f5eaea';
-  Chart.defaults.font.family = 'Exo 2';
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  Chart.defaults.font?.family = 'Exo 2';
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   new Chart(ctx, {
     type: 'line',
     data: {

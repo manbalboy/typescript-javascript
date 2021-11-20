@@ -10,19 +10,20 @@
 
 2. 명시적인 `any` 선언하기
 - `tsconfig.js` 파일에 `noImplicitAny` 값을 `true`로 추가
+- 가능한한 구체적인 타입으로 타입정의
 
 3 . setup
 ## 타입스크립트 프로젝트 환경 구성
 
-1. 프로젝트 폴더 생성
-2. `npm init -y`로 `package.json` 파일 생성
-3. 아래 명령어로 타입스크립트 및 문법 검사, 코드 정리 도구 라이브러리 추가
+- 1. 프로젝트 폴더 생성
+- 2. `npm init -y`로 `package.json` 파일 생성
+- 3. 아래 명령어로 타입스크립트 및 문법 검사, 코드 정리 도구 라이브러리 추가
 
 ```sh
 npm i -D typescript @babel/core @babel/preset-env @babel/preset-typescript @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint prettier eslint-plugin-prettier
 ```
 
-4. 프로젝트 폴더 바로 아래에 ESLint 설정 파일 추가
+- 4. 프로젝트 폴더 바로 아래에 ESLint 설정 파일 추가
 
 ```js
 // .eslintrc.js
@@ -58,7 +59,7 @@ module.exports = {
 };
 ```
 
-5. ESLint 이그노어 파일 추가
+- 5. ESLint 이그노어 파일 추가
 
 ```
 // .eslintignore
@@ -89,4 +90,5 @@ node_modules
 }
 ```
 
-5. `ctrl` + `,` 또는 `cmd` + `,` 눌러서 VSCode 설정 파일(Settings)에 들어간 후 `format on save` 검색. 아래와 같이 체크가 안되어 있는지 확인.
+- 5. `ctrl` + `,` 또는 `cmd` + `,` 눌러서 VSCode 설정 파일(Settings)에 들어간 후 `format on save` 검색. 아래와 같이 체크가 안되어 있는지 확인.
+
